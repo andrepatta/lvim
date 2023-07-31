@@ -1,0 +1,6 @@
+reload('user.plugins')
+reload('user.colorscheme')
+reload('user.options')
+reload('user.keymaps')
+reload('user.which-key')
+reload('user.dashboard')
