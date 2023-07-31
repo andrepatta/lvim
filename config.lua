@@ -1,4 +1,5 @@
 reload('user.plugins')
+reload('user.debugger')
 reload('user.colorscheme')
 reload('user.options')
 reload('user.keymaps')
