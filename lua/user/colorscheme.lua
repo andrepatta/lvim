@@ -101,7 +101,7 @@ if vim.g.neovide then
   return
 end
 
-lvim.colorscheme = themes.tokyonight
+lvim.colorscheme = themes.lunar
 
 if lvim.colorscheme == themes.sonokai then
   vim.g.sonokai_style = "espresso"

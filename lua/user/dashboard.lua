@@ -12,7 +12,6 @@ local header = {
   },
 }
 
-local plugins = ""
 local date = ""
 if vim.fn.has "linux" == 1 or vim.fn.has "mac" == 1 then
   -- -- this no longer works with packer, need to modify to work with lazy.nvim
@@ -23,24 +22,13 @@ if vim.fn.has "linux" == 1 or vim.fn.has "mac" == 1 then
   local thingy = io.popen 'echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"'
   date = thingy:read "*a"
   thingy:close()
-  plugins = plugins:gsub("^%s*(.-)%s*$", "%1")
 else
-  plugins = "N/A"
   date = "  whatever "
 end
 
-local plugin_count = {
-  type = "text",
-  val = "└─ " .. kind.cmp_kind.Module .. " " .. plugins .. " plugins in total ─┘",
-  opts = {
-    position = "center",
-    hl = "String",
-  },
-}
-
 local heading = {
   type = "text",
-  val = "┌─ " .. kind.icons.calendar .. " Today is " .. date .. " ─┐",
+  val = kind.icons.calendar .. " Today is " .. date,
   opts = {
     position = "center",
     hl = "String",
@@ -67,7 +55,7 @@ local function button(sc, txt, keybind)
     text = txt,
     shortcut = sc,
     cursor = 5,
-    width = 24,
+    width = 50,
     align_shortcut = "right",
     hl_shortcut = "Number",
     hl = "Function",
@@ -90,18 +78,20 @@ end
 local buttons = {
   type = "group",
   val = {
+    -- { "p", lvim.icons.ui.Project .. "  Projects ", "<CMD>Telescope projects<CR>" },
     button("f", " " .. kind.cmp_kind.Folder .. " Explore", ":Telescope find_files<CR>"),
-    button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
+    button("e", " " .. lvim.icons.ui.NewFile .. "  New file", ":ene <BAR> startinsert <CR>"),
+    button("p", " " .. lvim.icons.ui.Project .. "  Projects", ":Telescope projects<CR>"),
     button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
     button(
       "g",
-      " " .. kind.icons.git .. " Git Status",
+      " " .. kind.icons.git .. "  Git Status",
       ":lua require('lvim.core.terminal')._exec_toggle({cmd = 'lazygit', count = 1, direction = 'float'})<CR>"
     ),
-    button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
+    button("r", " " .. lvim.icons.ui.History .. "  Recents", ":Telescope oldfiles<CR>"),
     button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
     button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/user/colorscheme.lua<CR>"),
-    button("q", " " .. kind.icons.exit .. " Quit", ":q<CR>"),
+    button("q", " " .. lvim.icons.ui.Close .. "  Quit", ":q<CR>"),
   },
   opts = {
     spacing = 1,
@@ -111,7 +101,6 @@ local buttons = {
 local section = {
   header = header,
   buttons = buttons,
-  plugin_count = plugin_count,
   heading = heading,
   footer = footer,
 }
@@ -123,7 +112,6 @@ lvim.builtin.alpha.custom = {
       section.header,
       { type = "padding", val = 2 },
       section.heading,
-      section.plugin_count,
       { type = "padding", val = 1 },
       section.buttons,
       section.footer,

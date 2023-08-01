@@ -38,7 +38,7 @@ lvim.builtin.project.patterns = {
   "package-lock.json",
   "yarn.lock",
   "package.json",
-  ".gitignore",
+  "Makefile",
   "lazy-lock.json"
 }
 
