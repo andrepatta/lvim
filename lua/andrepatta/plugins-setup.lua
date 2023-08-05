@@ -5,6 +5,7 @@ require("andrepatta.plugins.treesitter")
 require("andrepatta.plugins.which-key")
 
 lvim.plugins = {
+  -- themes
   { "lunarvim/lunar.nvim" },
   { "morhetz/gruvbox" },
   { "sainnhe/gruvbox-material" },
@@ -17,6 +18,7 @@ lvim.plugins = {
   { "bluz71/vim-nightfly-colors" },
   { "andrepatta/eclipse.vim",    branch = "dev" },
 
+  -- general
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
@@ -24,8 +26,17 @@ lvim.plugins = {
       require("todo-comments").setup()
     end
   },
-
-  { "ThePrimeagen/harpoon" },
+  { "tpope/vim-surround" },
+  { "tpope/vim-repeat" },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end,
+  },
+  {
+    "mbbill/undotree",
+  },
 
   {
     "folke/persistence.nvim",
@@ -38,29 +49,11 @@ lvim.plugins = {
     end
   },
 
-  { "tpope/vim-surround" },
-  { "tpope/vim-repeat" },
-
-  {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    config = function()
-      require('hop').setup()
-    end
-  },
-
   {
     'nvim-telescope/telescope-frecency.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'kkharji/sqlite.lua' },
   },
 
-  {
-    "norcalli/nvim-colorizer.lua",
-    -- cmd = "ColorizerToggle",
-    config = function()
-      require("colorizer").setup()
-    end,
-  },
 };
 
 lvim.builtin.telescope.on_config_done = function(telescope)

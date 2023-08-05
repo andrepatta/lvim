@@ -17,7 +17,10 @@ lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 lvim.keys.normal_mode["n"] = "nzzzv"
 lvim.keys.normal_mode["N"] = "Nzzzv"
 
-lvim.keys.insert_mode["jk"] = "<ESC>" -- exit insert mode with jk
+-- undotree
+lvim.keys.normal_mode["<leader>u"] = vim.cmd.UndotreeToggle
+
+-- lvim.keys.insert_mode["jk"] = "<ESC>" -- exit insert mode with jk
 
 vim.keymap.set('n', 'gn', ":tabe %<CR>")
 

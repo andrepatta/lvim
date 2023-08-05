@@ -43,7 +43,7 @@ lvim.builtin.nvimtree.setup.renderer = {
         symlink_open = lvim.icons.ui.FolderOpen,
       },
       git = {
-        unstaged = lvim.icons.git.FileUnstaged,
+        unstaged = "M",
         staged = lvim.icons.git.FileStaged,
         unmerged = lvim.icons.git.FileUnmerged,
         renamed = lvim.icons.git.FileRenamed,
