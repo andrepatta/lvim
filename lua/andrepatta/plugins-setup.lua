@@ -1,5 +1,10 @@
-lvim.plugins = {
+require("andrepatta.plugins.lualine")
+require("andrepatta.plugins.nvimtree")
+require("andrepatta.plugins.telescope")
+require("andrepatta.plugins.treesitter")
+require("andrepatta.plugins.which-key")
 
+lvim.plugins = {
   { "lunarvim/lunar.nvim" },
   { "morhetz/gruvbox" },
   { "sainnhe/gruvbox-material" },
@@ -9,6 +14,8 @@ lvim.plugins = {
   { "tomasr/molokai" },
   { "ayu-theme/ayu-vim" },
   { "folke/tokyonight.nvim" },
+  { "bluz71/vim-nightfly-colors" },
+  { "andrepatta/eclipse.vim",    branch = "dev" },
 
   {
     "folke/todo-comments.nvim",
@@ -45,6 +52,14 @@ lvim.plugins = {
   {
     'nvim-telescope/telescope-frecency.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'kkharji/sqlite.lua' },
+  },
+
+  {
+    "norcalli/nvim-colorizer.lua",
+    -- cmd = "ColorizerToggle",
+    config = function()
+      require("colorizer").setup()
+    end,
   },
 };
 

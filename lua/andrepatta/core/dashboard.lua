@@ -1,11 +1,11 @@
-local kind = require("user.kind")
+local kind = require("andrepatta.core.kind")
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "custom"
 
 local header = {
   type = "text",
-  val = require("user.banners").dashboard(),
+  val = require("andrepatta.core.banners").dashboard(),
   opts = {
     position = "center",
     hl = "Comment",
@@ -78,7 +78,6 @@ end
 local buttons = {
   type = "group",
   val = {
-    -- { "p", lvim.icons.ui.Project .. "  Projects ", "<CMD>Telescope projects<CR>" },
     button("f", " " .. kind.cmp_kind.Folder .. " Explore", ":Telescope find_files<CR>"),
     button("e", " " .. lvim.icons.ui.NewFile .. "  New file", ":ene <BAR> startinsert <CR>"),
     button("p", " " .. lvim.icons.ui.Project .. "  Projects", ":Telescope projects<CR>"),
@@ -90,7 +89,8 @@ local buttons = {
     ),
     button("r", " " .. lvim.icons.ui.History .. "  Recents", ":Telescope oldfiles<CR>"),
     button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
-    button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/user/colorscheme.lua<CR>"),
+    button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config",
+      ":e ~/.config/lvim/lua/andrepatta/core/colorscheme.lua<CR>"),
     button("q", " " .. lvim.icons.ui.Close .. "  Quit", ":q<CR>"),
   },
   opts = {

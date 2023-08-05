@@ -1,4 +1,4 @@
-local kind = require('user.kind')
+local kind = require('andrepatta.core.kind')
 
 local wk = lvim.builtin.which_key
 
