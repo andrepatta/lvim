@@ -9,6 +9,10 @@ if vim.g.neovide then
   vim.g.neovide_input_macos_alt_is_meta = false
 end
 
+-- recommended by nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- format on save by default
 lvim.format_on_save = true
 

@@ -20,6 +20,7 @@ lvim.builtin.nvimtree.setup.renderer = {
   icons = {
     webdev_colors = lvim.use_icons,
     git_placement = "before",
+    modified_placement = "after",
     padding = " ",
     symlink_arrow = " ➛ ",
     show = {
@@ -43,7 +44,7 @@ lvim.builtin.nvimtree.setup.renderer = {
         symlink_open = lvim.icons.ui.FolderOpen,
       },
       git = {
-        unstaged = "M",
+        unstaged = lvim.icons.git.FileUnstaged,
         staged = lvim.icons.git.FileStaged,
         unmerged = lvim.icons.git.FileUnmerged,
         renamed = lvim.icons.git.FileRenamed,

@@ -17,6 +17,7 @@ local themes = {
   ayu = "ayu",
   nightfly = "nightfly",
   eclipse = "eclipse",
+  catppuccin = "catppuccin",
 }
 
 local extra_opts = {
@@ -50,7 +51,7 @@ if vim.g.neovide then
   return
 end
 
-lvim.colorscheme = themes.eclipse
+lvim.colorscheme = themes.catppuccin
 
 if lvim.colorscheme == themes.sonokai then
   vim.g.sonokai_style = "espresso"
@@ -66,6 +67,10 @@ end
 
 if lvim.colorscheme == themes.ayu then
   vim.g.ayucolor = extra_opts.ayu.styles.mirage
+end
+
+if lvim.colorscheme == themes.catppuccin then
+  -- require("andrepatta.core.themes.catppuccin").setup()
 end
 
 if lvim.colorscheme == themes.tokyonight then

@@ -3,6 +3,7 @@ require("andrepatta.plugins.nvimtree")
 require("andrepatta.plugins.telescope")
 require("andrepatta.plugins.treesitter")
 require("andrepatta.plugins.which-key")
+require("andrepatta.plugins.bufferline")
 
 lvim.plugins = {
   -- themes
@@ -16,7 +17,13 @@ lvim.plugins = {
   { "ayu-theme/ayu-vim" },
   { "folke/tokyonight.nvim" },
   { "bluz71/vim-nightfly-colors" },
-  { "andrepatta/eclipse.vim",    branch = "dev" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    config = function()
+      require("andrepatta.core.themes.catppuccin").setup()
+    end,
+  },
 
   -- general
   {
@@ -53,7 +60,6 @@ lvim.plugins = {
     'nvim-telescope/telescope-frecency.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'kkharji/sqlite.lua' },
   },
-
 };
 
 lvim.builtin.telescope.on_config_done = function(telescope)
