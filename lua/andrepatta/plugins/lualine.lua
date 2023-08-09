@@ -31,8 +31,8 @@ end
 lvim.builtin.lualine.options = {
   ions_enabled = true,
   theme = getTheme(),
-  -- component_separators = { left = '', right = '' },
-  -- section_separators = { left = '', right = '' },
+  component_separators = { left = '', right = '' },
+  section_separators = { left = '', right = '' },
   disabled_filetypes = { statusline = { "alpha" } },
   ignore_focus = {},
   always_divide_middle = true,

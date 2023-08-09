@@ -10,7 +10,7 @@ wk.mappings["S"] = {
 }
 
 wk.mappings["l"]["t"] = { ":LvimToggleFormatOnSave<cr>", "Toggle format-on-save" }
-wk.mappings["l"]["R"] = { ":LspRestart<cr>", "Restart" }
+-- wk.mappings["l"]["R"] = { ":LspRestart<cr>", "Restart" }
 
 wk.mappings["s"]["w"] = {
   "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })<cr>",
@@ -27,11 +27,12 @@ wk.mappings["W"] = {
 }
 
 wk.mappings['x'] = { ":xa<cr>", "Save All and Quit", }
+wk.mappings['X'] = { ":wa<cr>", "Save All" }
 
 wk.mappings['u'] = { "Undotree" }
 
-wk.mappings["t"] = {
-  name = 'Telescope',
-  p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
-  r = { ':Telescope resume<cr>', 'Resume' },
-}
+-- wk.mappings["t"] = {
+--   name = 'Telescope',
+--   p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
+--   r = { ':Telescope resume<cr>', 'Resume' },
+-- }
