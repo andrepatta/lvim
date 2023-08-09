@@ -2,7 +2,7 @@ local getTheme = function()
   if lvim.colorscheme == "catppuccin" then
     return lvim.colorscheme
   else
-    local lualine_nightfly = require("lualine.themes.nightfly")
+    local lualine_nightfly = require("lualine.themes.gruvbox-material")
 
     -- new colors for theme
     local new_colors = {
@@ -31,8 +31,8 @@ end
 lvim.builtin.lualine.options = {
   ions_enabled = true,
   theme = getTheme(),
-  component_separators = { left = '', right = '' },
-  section_separators = { left = '', right = '' },
+  -- component_separators = { left = '', right = '' },
+  -- section_separators = { left = '', right = '' },
   disabled_filetypes = { statusline = { "alpha" } },
   ignore_focus = {},
   always_divide_middle = true,
@@ -45,10 +45,27 @@ lvim.builtin.lualine.options = {
 }
 
 lvim.builtin.lualine.sections = {
-  lualine_a = { 'mode' },
-  lualine_b = { 'branch', 'diff', 'diagnostics' },
-  lualine_c = {},
-  lualine_x = { 'filetype' },
-  lualine_y = { 'progress' },
-  lualine_z = { 'location' }
+  -- lualine_a = { 'mode' },
+  -- lualine_b = { 'branch', 'diff', 'diagnostics' },
+  -- lualine_c = {},
+  -- lualine_x = { 'filetype' },
+  -- lualine_y = { 'progress' },
+  -- lualine_z = { 'location' }
+
+  lualine_a = { "mode" },
+  lualine_b = { "branch" },
+  lualine_c = { "filename" },
+  lualine_x = { "encoding", "fileformat", "filetype" },
+  lualine_y = { "progress" },
+  lualine_z = { "location" },
+}
+
+
+lvim.builtin.lualine.inactive_sections = {
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = { "filename" },
+  lualine_x = { "location" },
+  lualine_y = {},
+  lualine_z = {},
 }

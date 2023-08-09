@@ -34,7 +34,7 @@ M.setup = function()
       numbers = {},
       booleans = {},
       properties = {},
-      types = {},
+      types = { "bold" },
       operators = {},
     },
     color_overrides = {},

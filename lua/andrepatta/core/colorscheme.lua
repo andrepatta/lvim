@@ -51,7 +51,8 @@ if vim.g.neovide then
   return
 end
 
-lvim.colorscheme = themes.catppuccin
+lvim.colorscheme = themes.gruvbox_material
+-- lvim.colorscheme = themes.catppuccin
 
 if lvim.colorscheme == themes.sonokai then
   vim.g.sonokai_style = "espresso"
@@ -70,7 +71,7 @@ if lvim.colorscheme == themes.ayu then
 end
 
 if lvim.colorscheme == themes.catppuccin then
-  -- require("andrepatta.core.themes.catppuccin").setup()
+  require("andrepatta.core.themes.catppuccin").setup()
 end
 
 if lvim.colorscheme == themes.tokyonight then

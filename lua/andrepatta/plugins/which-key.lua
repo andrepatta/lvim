@@ -19,10 +19,11 @@ wk.mappings["s"]["w"] = {
 
 wk.mappings["W"] = {
   name = "Window Ctrl",
+  s = { '<C-w>s', 'Split horizontally' },
+  e = { '<C-w>v', 'Split vertically' },
   h = { '<C-w>|', 'Maximize window horizontally (|)' },
   v = { '<C-w>_', 'Maximize window vertically (_)' },
   ['='] = { '<C-w>=', 'Resize windows equally' },
-  s = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
 }
 
 wk.mappings['x'] = { ":xa<cr>", "Save All and Quit", }

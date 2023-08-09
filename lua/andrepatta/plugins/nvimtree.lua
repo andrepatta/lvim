@@ -1,3 +1,11 @@
+lvim.builtin.nvimtree.setup.filters = {
+  dotfiles = false,
+  git_clean = false,
+  no_buffer = false,
+  custom = { "node_modules", "\\.cache", ".DS_Store" },
+  exclude = {},
+}
+
 -- remove nvim-tree default arrow icons
 lvim.builtin.nvimtree.setup.renderer = {
   add_trailing = false,
