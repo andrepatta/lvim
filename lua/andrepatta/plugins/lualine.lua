@@ -30,7 +30,7 @@ end
 
 lvim.builtin.lualine.options = {
   ions_enabled = true,
-  theme = getTheme(),
+  theme = "vscode",
   component_separators = { left = '', right = '' },
   section_separators = { left = '', right = '' },
   disabled_filetypes = { statusline = { "alpha" } },

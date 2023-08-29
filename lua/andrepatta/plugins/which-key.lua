@@ -31,8 +31,4 @@ wk.mappings['X'] = { ":wa<cr>", "Save All" }
 
 wk.mappings['u'] = { "Undotree" }
 
--- wk.mappings["t"] = {
---   name = 'Telescope',
---   p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
---   r = { ':Telescope resume<cr>', 'Resume' },
--- }
+wk.mappings['s']['o'] = { ":SymbolsOutline <CR>", "Toggle Symbols Outline" }

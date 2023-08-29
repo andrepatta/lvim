@@ -18,6 +18,7 @@ local themes = {
   nightfly = "nightfly",
   eclipse = "eclipse",
   catppuccin = "catppuccin",
+  vscode = "vscode",
 }
 
 local extra_opts = {
@@ -51,8 +52,9 @@ if vim.g.neovide then
   return
 end
 
-lvim.colorscheme = themes.gruvbox_material
+-- lvim.colorscheme = themes.gruvbox_material
 -- lvim.colorscheme = themes.catppuccin
+lvim.colorscheme = themes.vscode
 
 if lvim.colorscheme == themes.sonokai then
   vim.g.sonokai_style = "espresso"
